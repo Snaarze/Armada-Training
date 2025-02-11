@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Survey Form</h1>
+        <form action="#" method="POST" >
+            <!-- full name -->
+            <div class="">
+                <label for="fullname" name="fullname"  >Fullname : </label>
+                <input type="text" name="fullname" id="fullname" placeholder="John Doe" required>
+            </div>
+            <!-- email -->
+            <div class="">
+                <label for="email" name="email">Email : </label>
+                <input type="email" name="email" id="email" placeholder="johndoe123@gmail.com" required>
+            </div>
+            <!-- user role selection -->
+            <div class="userContainer">
+                <p>How satisfied are you with our service</p>
+                <!-- each container -->
+                <div class="">
+                    <input type="radio" name="answer" id="very-satisfied" value="very-satisfied" required>
+                    <label for="very-satisfied">Very Satisfied</label>
+                </div>
+
+               <div class="">
+                    <input type="radio" name="answer" id="satisfied" value="satisfied" required>
+                    <label for="satisfied">Satisfied</label>
+               </div>
+
+               <div class="">
+                    <input type="radio" name="answer" id="neutral" value="neutral">
+                    <label for="neutral">Neutral</label>
+               </div>
+
+                <div class="">
+                    <input type="radio" name="answer" id="dissatisfied" value="dissatisfied">
+                    <label for="dissatisfied"> Dissatisfied</label>
+                </div>
+                <div class="">
+                    <input type="radio" name="answer" id="very-dissatisfied" value="very-dissatisfied">
+                    <label for="very-dissatisfiedd">Very Dissatisfied</label>
+                </div>
+            </div>
+            <!-- features -->
+            <div class="featuresContainer">
+                <p>What features ddo you value most?</p>
+                
+                <div class="">
+                    <input type="checkbox" name="feature" id="ease-of-use" required>
+                    <label for="ease-of-use">Ease of use</label>
+                </div>
+
+                <div class="">
+                    <input type="checkbox" name="feature" id="design" required>
+                    <label for="design">Design</label>
+                </div>
+
+                <div class="">
+                    <input type="checkbox" name="feature" id="customer-support" required>
+                    <label for="customer-support">Customer Support</label>
+                </div>
+            </div>
+            <!-- options -->
+            <div class="">
+                <label>What best describes you?</label>
+                <select name="occupation" id="occupation" required>
+                    <option value="">Select Occupation</option>
+                    <option value="student">Student</option>
+                    <option value="professional">Professional</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <!-- textarea -->
+            <div class="">
+                <label>Additional Feedback:</label>
+                <textarea name="message" id="message" placeholder="please provide your suggestion here.." required></textarea>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
