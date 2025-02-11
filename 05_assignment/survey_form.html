@@ -19,9 +19,9 @@
                 <input type="email" name="email" id="email" placeholder="johndoe123@gmail.com" required>
             </div>
             <!-- user role selection -->
-            <div class="userContainer">
-                <p>How satisfied are you with our service</p>
-                <!-- each container -->
+             <fieldset>
+                <legend> How satisfied are you with our service</legend>
+
                 <div class="">
                     <input type="radio" name="answer" id="very-satisfied" value="very-satisfied" required>
                     <label for="very-satisfied">Very Satisfied</label>
@@ -45,11 +45,11 @@
                     <input type="radio" name="answer" id="very-dissatisfied" value="very-dissatisfied">
                     <label for="very-dissatisfied">Very Dissatisfied</label>
                 </div>
-            </div>
-            <!-- features -->
-            <div class="featuresContainer">
-                <p>What features ddo you value most?</p>
-                
+             </fieldset>
+             <!-- features -->
+             <fieldset>
+                <legend>What features ddo you value most?</legend>
+
                 <div class="">
                     <input type="checkbox" name="feature" id="ease-of-use" required>
                     <label for="ease-of-use">Ease of use</label>
@@ -64,7 +64,8 @@
                     <input type="checkbox" name="feature" id="customer-support" required>
                     <label for="customer-support">Customer Support</label>
                 </div>
-            </div>
+             </fieldset>
+           
             <!-- options -->
             <div class="">
                 <label>What best describes you?</label>
