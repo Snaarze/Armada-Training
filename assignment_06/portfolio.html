@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to My Portfolio</h1>
+            <nav class="">
+                <ul>
+                    <li>
+                        <a href="">About Me</a>
+                    </li>
+                    <li>
+                        <a href="">Projects</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                </ul>
+           </nav>
+        </header>
+        <main>
+           
+            <section>
+                <h2>About me</h2>
+                <p>Hello! I'm passionate about web development and enjoy creating projects that solve real-world problems</p>
+                <img src="./img/images.jpg" alt="Best UI/UX Design">
+            </section>
+           
+            <section>
+                <h2>My Projects</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Project Name
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th>
+                                Year
+                            </th>
+                        </tr>
+                    
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Survey Form
+                            </td>
+                            <td>
+                                a webpage that collects data from the user
+                            </td>
+                            <td>
+                                2025
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Portfolio
+                            </td>
+                            <td>
+                                a webpage that display my skillsets
+                            </td>
+                            <td>
+                                2025
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Semantic Tags
+                            </td>
+                            <td>
+                                a webpage that showcase the uses of semantic tags
+                            </td>
+                            <td>
+                                2025
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+      
+            <section>
+                <h2>Contact Me</h2>
+                <form action="#" method="POST" >
+                    <!-- full name -->
+                    <div class="">
+                        <label for="fullname" >Fullname : </label>
+                        <input type="text" name="fullname" id="fullname" placeholder="John Doe" required>
+                    </div>
+                    <!-- email -->
+                    <div class="">
+                        <label for="email">Email : </label>
+                        <input type="email" name="email" id="email" placeholder="johndoe123@gmail.com" required>
+                    </div>
+                    <!-- user role selection -->
+                    <div class="questionPortfolio">
+                        <p>How did you hear about this portfolio</p>
+                        <!-- each container -->
+                        <div class="">
+                            <input type="radio" name="answer" id="friend">
+                            <label for="friend">Friend</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="answer" id="social-media">
+                            <label for="social-media">Social Media</label>
+                        </div>
+                        <div class="">
+                            <input type="radio" name="answer" id="search-engine">
+                            <label for="search-engine">Search Engine</label>
+                        </div>
+                    </div>
+                    <!-- features -->
+                    <div class="questionPortfolio">
+                        <p>Skills/Interests</p>
+                        <!-- each container -->
+                        <div class="">
+                            <input type="checkbox" name="answer" id="web-development">
+                            <label for="web-development">Web Develpoment</label>
+                        </div>
+                        <div class="">
+                            <input type="checkbox" name="answer" id="ui-ux">
+                            <label for="ui-ux">UI/UX Design</label>
+                        </div>
+                        <div class="">
+                            <input type="checkbox" name="answer" id="video-editing">
+                            <label for="video-editing">Video Editing</label>
+                        </div>
+                    </div>
+                    <!-- textarea -->
+                    <div class="">
+                        <label>Comments or Messages :</label>
+                        <textarea name="message" id="message" placeholder="please provide your suggestion here.."></textarea>
+                    </div>
+        
+                    <input type="submit" value="Submit">
+                </form>
+            </section>
+        </main>
+        <footer>@Jeremy Glenn I. Panlasigui 2025</footer>
+    </body>
+</html>
