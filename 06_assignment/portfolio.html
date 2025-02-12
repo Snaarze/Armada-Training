@@ -5,36 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- roboto fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav class="">
+        <h1 class="title-header">Welcome to My Portfolio</h1>
+        <nav class="nav-container">
             <ul>
                 <li>
-                    <a href="">About Me</a>
+                    <a href="#aboutme">About Me</a>
                 </li>
                 <li>
-                    <a href="">Projects</a>
+                    <a href="#projects">Projects</a>
                 </li>
                 <li>
-                    <a href="">Contact</a>
+                    <a href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
+        <div class="top-container">
+            <section class="left-section-container" id="aboutme">
+                <h2 id="aboutme">About me</h2>
+                <p>
+                    I am an aspiring software engineer with a strong focus on web design and solving real-world problems
+                    through innovative digital solutions. My passion lies in creating user-friendly, efficient, and
+                    impactful web experiences that enhance everyday life. Beyond web development, I am also deeply
+                    interested in other areas of technology, such as quality assurance and network engineering, as I
+                    continuously seek to expand my knowledge and skill set. Driven by curiosity and a problem-solving
+                    mindset, I am always eager to learn, adapt, and contribute to the ever-evolving world of technology.
+                </p>
+            </section>
+            <div class="image-container">
+                <img src="./img/profile.png" alt="Profile Picture">
+            </div>
+        </div>
 
-        <section>
-            <h2>About me</h2>
-            <p>Hello! I'm passionate about web development and enjoy creating projects that solve real-world problems
-            </p>
-            <img src="./img/images.jpg" alt="Best UI/UX Design">
-        </section>
-
-        <section>
-            <h2>My Projects</h2>
+        <section class="section-projects" id="projects">
+            <p id="title-project">My Projects</p>
             <table>
                 <thead>
                     <tr>
@@ -66,16 +81,19 @@
             </table>
         </section>
 
-        <section>
-            <h2>Contact Me</h2>
-            <form action="#" method="POST">
+        <section class="section-form" id="contact">
+            <div>
+                <span>Want my Services?</span>
+                <h2>Contact Me</h2>
+            </div>
+            <form action="#" method="POST" class="contact-form">
                 <!-- full name -->
-                <div class="">
+                <div class="label-container">
                     <label for="fullname">Fullname : </label>
                     <input type="text" name="fullname" id="fullname" placeholder="John Doe" required>
                 </div>
                 <!-- email -->
-                <div class="">
+                <div class="label-container">
                     <label for="email">Email : </label>
                     <input type="email" name="email" id="email" placeholder="johndoe123@gmail.com" required>
                 </div>
@@ -119,7 +137,9 @@
                         placeholder="please provide your suggestion here.."></textarea>
                 </div>
 
-                <input type="submit" value="Submit">
+                <div class="button-container">
+                    <input type="submit" value="Submit" class="submitBtn">
+                </div>
             </form>
         </section>
     </main>
