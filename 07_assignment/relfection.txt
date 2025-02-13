@@ -1,0 +1,1 @@
+i used display : flex in main and body to change their axis and match the image provided in the training and add margin and padding on it. est time - less than 5 minutes

@@ -1,0 +1,3 @@
+Any difficulties you faced? - none so far as i have little knowledge about it
+How you solved them - i solved them using flex-basis to overwrite their width;
+How long the assignment took you to complete  - less than 10 minutes

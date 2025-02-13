@@ -1,0 +1,43 @@
+
+
+/* estimate time < 5minutes */
+body {
+    width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+body, main {
+    display: flex;
+    gap: 20px;
+}
+
+main{
+    width: 100%;
+}
+
+
+header {
+    background-color: #ffcc00;
+    height: 150px;
+}
+
+aside {
+    background-color: #9b59b6;
+    height: 300px;
+    width: 300px;
+}
+
+section {
+    background-color: #1abc9c;
+    height: 300px;
+    width: 876px;
+}
+
+footer {
+    background-color: #e74c3c;
+    height: 100px;
+}
