@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+header, .title-container , .task-container > p:nth-child(odd){
+    background-color: #79D7BE;
+}
+
+main{
+    height: 85.5vh;
+    background-color: #F7F7F7;
+}
+
+input[type="text"] {
+    border: 1px solid lightgrey;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.submit-btn {
+    border-radius:  0px 5px 5px 0px;
+    font-size: 14.5px;
+    border: none;
+    cursor: pointer;
+}
+
+
+footer, .submit-btn, .task-container > p {
+    background-color: #2E5077;
+    text-align: center;
+}
+
+header, footer{
+    padding: 20px;
+}
+
+.title-container, .task-container > p{
+    border-radius: 5px;
+}
+
+header, footer , .title-container, .submit-btn , .task-container > p {
+    color: white;
+}
+
+main , .section-container, .task-container, .title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-container{
+    width: 400px;
+    height: 300px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding : 40px 20px;
+    gap: 15px;
+}
+
+.title-container {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.input-container{
+    display: flex;
+    align-items: center;
+}
+
+.input-container > * {
+    padding: 10px;
+}
+
+.title-container, .input-container, input[type="text"]{
+    flex : 1;
+}
+
+.task-container{
+    flex : 3;
+    justify-content: space-between;
+}
+
+.section-container > div, p, .task-container > p {
+    width: 100%;
+}
+
+.task-container > p {
+    padding: 14px 0px;
+}
+
+.task-container > p:nth-child(2){
+    text-decoration: line-through;
+}
+
