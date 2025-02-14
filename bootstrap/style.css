@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+h1{
+    color: white;
+}
+p, .version-container > ul > li{
+    color: rgba(222, 226, 230, 0.75);
+}
+
+.nav-container > ul li,  .nav-container a{
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+}
+
+.main-container, .bottom-container{
+    background-color: #2b3035;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.nav-container{
+    padding: 20px;
+}
+
+.nav-container, .read-btn{
+    background-color: #6f42c1;;
+}
+
+.main-container{
+    flex : 1.2;
+    padding-top: 50px;
+}
+
+.search-container{
+    flex: 1; 
+    margin-left: 25em;
+    position: relative;
+}
+
+.search-input{
+    padding: 8px 40px;
+    width: 300px;
+    border: 1px solid #4A4947;
+    border-radius: 5px;
+    color: white;
+    background-color: #371675;
+}
+
+.search-input::placeholder{
+    color: white;
+    font-size: 14px;
+}
+
+.magnifying{
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    color: white;
+}
+
+
+.nav-container > ul , .main-container > h1, .main-container  {
+    justify-content: center;
+    align-items: center;   
+}
+
+.main-container > h1 {
+    font-size: 50px;
+    width: 24ch;
+}
+
+.main-container > p, .bottom-container > p{
+    width: 65ch;
+}
+
+
+.docs-container > p  {
+    background-color: rgb(167, 167, 167);
+    color: white;
+    padding: 20px 50px;
+   
+}
+
+.docs-container > p, .read-btn {
+    border-radius: 8px;
+}
+
+.version-container > ul > li > a{
+    color: #4A4947;
+
+}
+
+
+.read-btn{
+    color: white;
+    text-decoration: none;
+    padding: 20px 20px;
+}
+
+.bottom-container{
+    flex : 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag-text{
+    font-size: 24px;
+    font-weight: bold;
+    color: #6f42c1;
+    padding: 20px;
+    background-color: rgb(78, 40, 78);
+    border-radius: 10px;
+}
+
+.nav-container, .nav-container > ul, .docs-container, .version-container, .version-container > ul{
+    display: flex;
+    gap: 20px;
+}
+.bottom-container, .main-container {
+    gap: 20px;
+}
+
+.started-text{
+    font-size: 48px;
+}
+.bottom-container > p {
+    font-size: 20px;
+}
+
+.read-link{
+    color: #6ea8fe;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+

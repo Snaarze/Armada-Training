@@ -1,0 +1,2 @@
+i have been struggling getting the right color of the webpage to perfectly match the design, although i solved it some by copying the color,background color provided by devtools on their website.
+estimated time i put here is around 1 - 1/2 hour
