@@ -50,7 +50,7 @@ p, .version-container > ul > li{
 
 .search-container{
     flex: 1; 
-    margin-left: 25em;
+    margin-left: 30em;
     position: relative;
 }
 
@@ -74,7 +74,6 @@ p, .version-container > ul > li{
     top: 8px;
     color: white;
 }
-
 
 .nav-container > ul , .main-container > h1, .main-container  {
     justify-content: center;
@@ -116,7 +115,6 @@ p, .version-container > ul > li{
 
 .bottom-container{
     flex : 1;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -130,13 +128,11 @@ p, .version-container > ul > li{
     border-radius: 10px;
 }
 
-.nav-container, .nav-container > ul, .docs-container, .version-container, .version-container > ul{
+.nav-container, .nav-container > ul, .docs-container, .version-container, .version-container > ul, .bottom-container, .main-container {
     display: flex;
     gap: 20px;
 }
-.bottom-container, .main-container {
-    gap: 20px;
-}
+
 
 .started-text{
     font-size: 48px;

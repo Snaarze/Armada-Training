@@ -10,7 +10,6 @@ body{
     height: 220vh;
 }
 
-
 select , .sign-in-btn, h3, h4 , h5, p, a, main > h1{
     color: white;
 }
@@ -74,7 +73,6 @@ select , .sign-in-btn, h3, h4 , h5, p, a, main > h1{
     padding: 0 30px;
 }
 
-
 .sign-in-btn{
     padding: 7px 25px;
 }
@@ -135,7 +133,6 @@ select , .sign-in-btn, h3, h4 , h5, p, a, main > h1{
    
 }
 
-
 .trending-show-container, .reason-container{
     display: flex;
     flex-direction: column;
@@ -150,7 +147,6 @@ select , .sign-in-btn, h3, h4 , h5, p, a, main > h1{
     place-self: start;
     margin-left: 18.5em;
 }
-
 
 .show-container{
     display: flex;
@@ -204,7 +200,6 @@ select , .sign-in-btn, h3, h4 , h5, p, a, main > h1{
     line-height: 1.2rem;
 }
 
-
 .email-input-footer{
     background-color: rgba(19, 18, 18, 0.8);
     border: 1px solid rgb(175, 175, 175);
@@ -220,9 +215,3 @@ select , .sign-in-btn, h3, h4 , h5, p, a, main > h1{
 .join-membership-container{
     margin-top: 100px;
 }
-
-
-
-
-
-
