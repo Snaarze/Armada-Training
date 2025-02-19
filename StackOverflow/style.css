@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+header >  nav {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid black ;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+input[type="text"]{
+    width: 550px;
+    padding: 5px 15px;
+    margin-right: 20px;
+}
+
+nav > a > img, .section-left-container > img, .career-container > section > img{
+    width: 150px;
+}
+
+nav a {
+    color: #A7ADB4;
+}
+
+
+header > nav > ul {
+    margin: 0 10px;
+}
+
+header > nav > ul, .join-container{
+    display: flex;
+    gap: 20px;
+}
+
+nav a, nav li, .join-link-btn, .visit-btn  {
+    text-decoration: none;
+    list-style: none;
+}
+
+a.visit-btn{
+    background-color: #A7ADB4;
+}
+
+.login-btn{
+    border: 1px solid blue;
+}
+
+.signup-btn{
+    padding : 20px
+}
+
+.join-link-btn{
+    color: white;
+    background-color: #1B75D0;
+}
+
+.explore-link-btn{
+    background-color: white;
+    color: #1B75D0;
+}
+
+.join-link-btn, .explore-link-btn, .supercharge-btn{
+    padding: 5px;
+    border-radius: 5px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.content-container> p {
+    font-size: 20px;
+}
+
+aside{
+    position: sticky;
+    top: 70px;
+    height: 100%;
+}
+
+aside > nav {
+    width: 150px;
+    margin-right: 50px;
+}
+
+aside > nav li {
+    padding: 5px;
+}
+
+h1{
+    font-size: 34px;
+    width: 23ch;
+}
+p{
+    font-size: 16px;
+    width: 54ch;
+}
+
+.content-container {
+    height: 150vh;
+    width: 930px;
+    gap: 20px;
+}
+
+.content-container, .section-left-container, .left-container, .right-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.introduction-container{
+    height: 300px !important; 
+    background-color: #A7ADB4
+}
+
+.introduction-container  span{
+    background-image: url(./images/background-image.png);
+    background-size: contain;
+    padding: 0 15px;
+}
+
+.content-container > section:not(:nth-child(1)), .ad-container, .left-container, .right-container , .career-container {
+    height: 200px;
+    border:1px solid #E3E6E8;
+    border-radius: 10px;
+}
+
+.content-container > section, .ad-container, .career-container{
+    display: flex;
+    align-items: flex-end;
+}
+
+.content-container > section:nth-child(4){
+    background-color: #3B4045;
+    color: white;
+}
+
+.content-container > section:not(:first-child) > img {
+   height: 150px;
+   margin-left: 90px;
+   border-bottom-right-radius: 10px;
+}
+
+.left-container, .right-container{
+    flex: 1;
+    padding-left: 20px;
+}
+
+.left-container > p, .right-container > p, .career-container > section > p {
+    height: 75px;
+}
+
+.introduction-container > img{
+    padding-top: 70px ;
+    height: 230px;
+    margin-right: 30px;
+}
+.section-left-container{
+    margin-left: 30px;
+}
+
+.section-left-container, .left-container , .right-container{
+    justify-content: center;
+    gap: 10px;
+}
+
+.section-left-container > div,.left-container > div, .right-container > a, .section-left-container > a{
+    margin-bottom: 20px;
+}
+
+.section-left-container > div, .right-container > div, .left-container > div{
+    display: flex;
+    justify-content: start;
+}
+
+.ad-container{
+    border: none;
+    gap: 20px;
+}
+
+.api-btn{
+    width: 200px;
+}
+
+.supercharge-btn{
+    background-color: orange;
+    width: 165px;
+    color: white;
+    text-decoration: none;
+}
+
+.career-container > img {
+    height: 250px;
+}
+
+.career-btn{
+    width: 165px;
+}
