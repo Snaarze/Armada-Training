@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+header {
+    padding: 20px 100px;
+}
+
+header, nav > ul button , .search-img, .dash-img ,input{
+    background-color: #212830;
+}
+
+nav > ul button,  nav a, .search-img, .dash-img , input::placeholder, aside ul li:first-child p{
+    border: none;
+    color: white;
+}
+
+a, li{
+    list-style: none;
+    text-decoration: none;
+}
+
+nav, nav ul, footer ul, .right-nav-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+form {
+    position: relative;
+}
+
+input[type="text"], aside ul{
+    width: 300px;
+}
+
+input[type="text"], .signup-btn{
+    padding: 8px 30px;
+    border: 1px solid #9198A1;
+    border-radius: 5px;
+}
+
+main, footer, main > nav {
+    background-color: #151B23;
+}
+
+main, main > nav a, footer li, footer a {
+    color: #9198A1;
+    height: 100%;;
+}
+
+main > nav {
+    border-bottom: 1px solid black;
+    position: sticky;
+    top: 0;
+}
+
+main > nav li{
+    padding: 15px 0;
+}
+
+article, aside li{
+    border: 1px solid #9198A1;
+}
+
+article  a, aside a:first-child{
+    color: #478BE6;
+}
+article a:not(:last-child){
+    font-size: 24px;
+}
+
+article a:not(:last-child), aside ul li:not(:last-child) a:first-child, aside ul li:first-child p{
+    font-weight: 800;
+}
+.content-container > section {
+    width: 640px;
+}
+
+.content-container > section > * {
+    margin: 20px 0;
+}
+
+footer {
+    padding: 30px 400px;
+}
+
+footer  li, button, article p, aside li:not(:last-child) a:last-child, aside li:first-child p{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.active, main > nav li:hover {
+    border-bottom: 2px solid #478BE6;    
+}
+
+.search-img, .dash-img{
+    position: absolute;
+}
+
+.search-img{
+    left: 5px;
+    top: 22%;
+}
+
+.dash-img {
+    right: 5px;
+    top: 20%;
+}
+.content-container, .recommendation-container > section, nav, nav ul, footer ul, .right-nav-container {
+    gap: 20px;
+}
+
+.content-container{
+    display: flex;
+    margin : 10px 50px 50px 650px;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.top-rated-container > img, article{
+    width: 100%;
+}
+
+.top-rated-container > img, article, aside ul li:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.top-rated-container > div, article, aside ul li:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.top-rated-container > img {
+    border-bottom : 1px solid #9198A1;
+}
+.top-rated-container > div >  *, .recommendation-container > p{
+    padding : 15px;
+}
+
+.recommendation-container, aside ul, .profile-info-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.recommendation-container > section, aside li{
+    display: flex;
+}
+
+article > section, .engine-image{
+    margin: 0px 0px 20px 20px;
+}
+
+.engine-image {
+    background-color: #253142;
+    width: 100px;
+    height: 100px;
+    margin : 0 !important;
+    border-radius: 5px;
+}
+
+.game-container > *{
+    margin: 5px;
+}
+
+.img-container {
+    height: 75px;
+    width: 75px;
+}
+
+.engine-image, .img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-container > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+aside ul li:first-child, aside ul li:last-child{
+    padding: 20px;
+}
+
+aside ul li:first-child, aside ul li:last-child, aside li:not(:last-child) a:last-child{
+    font-size: 12px;
+}
+
+.profile-info-container{
+    justify-content: center;
+}
+.profile-info-container a:last-child{
+    margin-top: 10px;
+}
