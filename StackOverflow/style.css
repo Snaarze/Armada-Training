@@ -195,7 +195,6 @@ p{
 
 .supercharge-btn{
     background-color: orange;
-    width: 165px;
     color: white;
     text-decoration: none;
 }
@@ -204,6 +203,6 @@ p{
     height: 250px;
 }
 
-.career-btn{
+.career-btn, .supercharge-btn{
     width: 165px;
 }
