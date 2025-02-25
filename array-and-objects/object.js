@@ -1,3 +1,7 @@
+function message(msg) {
+  return console.log(msg);
+}
+
 const book = {
   title: "One piece",
   author: "Oda Ichiro",
@@ -6,22 +10,22 @@ const book = {
 };
 
 // before update of the book
-console.log(`Book title : ${book.title}`);
-console.log(`Author of the book : ${book.author}`);
-console.log(`Pages of book : ${book["pages"]}`);
-console.log(`has been read : ${book["isRead"]}`);
+message(`Book title : ${book.title}`);
+message(`Author of the book : ${book.author}`);
+message(`Pages of book : ${book["pages"]}`);
+message(`has been read : ${book["isRead"]}`);
 
-console.log("complete information of the book");
-console.log(book);
+message("complete information of the book");
+message(book);
 
 // updated book
 book.genre = "Shonen";
 
-console.log("Updating the book....");
-console.log("Book has been updated");
-console.log("Updated book");
+message("Updating the book....");
+message("Book has been updated");
+message("Updated book");
 
-console.log(book);
+message(book);
 
 // movies array
 const movies = [
@@ -42,10 +46,10 @@ const movies = [
   },
 ];
 
-console.log("Title : " + movies[1].title);
+message("Title : " + movies[1].title);
 
-console.log("before :");
-console.log(movies);
+message("before :");
+message(movies);
 
 // adding one object to array with title property only
 movies.push({ title: "Splash" });
@@ -53,8 +57,8 @@ movies.push({ title: "Splash" });
 // update the year of first object
 movies[0].year = 2023;
 
-console.log("after : ");
-console.log(movies);
+message("after : ");
+message(movies);
 
 const student = {
   name: "Jeremy Glenn Panlasigui",
@@ -62,17 +66,17 @@ const student = {
   subjects: ["Web Development", "Data Science", "Java"],
 };
 
-console.log("Student Info : ");
-console.log(student);
+message("Student Info : ");
+message(student);
 
 // print the first subjects
-console.log("First subject : " + student.subjects[0]);
+message("First subject : " + student.subjects[0]);
 
 // add new subject on the array
 student.subjects.push("Communication Skills");
 
-console.log("Student Updated Info : ");
-console.log(student);
+message("Student Updated Info : ");
+message(student);
 
 const recipe = {
   name: "Pasta Salad",
@@ -84,7 +88,7 @@ const recipe = {
   isVegetarian: true,
 };
 
-console.log(
+message(
   "The second recipe of " + recipe.name + " is " + recipe.ingredients[1].name
 );
 
@@ -93,5 +97,5 @@ recipe.ingredients.push({ name: "Corn", quantity: "1 half cup" });
 
 // iterate the whole object
 for (let key in recipe) {
-  console.log(recipe[key]);
+  message(recipe[key]);
 }
