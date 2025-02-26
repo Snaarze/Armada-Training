@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+header,
+footer,
+ul {
+  padding: 20px;
+  color: white;
+  background-color: lightblue;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+ul {
+  min-width: 200px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  text-align: center;
+}
+
+li > button {
+  border: none;
+  background-color: lightblue;
+  color: white;
+}
+
+footer {
+  text-align: center;
+}
+
+.container > li {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid white;
+}
