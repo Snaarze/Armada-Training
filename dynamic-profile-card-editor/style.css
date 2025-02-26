@@ -25,6 +25,10 @@ section {
   border: 1px solid black;
 }
 
+p {
+  color: lightgray;
+}
+
 main,
 .profile-info-container {
   display: flex;
@@ -52,10 +56,10 @@ input[type="submit"] {
 
 .profile-info-container {
   padding: 20px;
-  border: 1px solid black;
   width: 250px;
   margin-left: 50px;
   margin-top: 50px;
+  background-color: rgb(248, 248, 248);
 }
 
 section,
