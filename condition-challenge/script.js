@@ -44,9 +44,9 @@ if (age >= 18) {
 
 // ticker price calculator
 if (age < 12) {
-  message("The ticker is free");
+  message("The ticket is free");
 } else if (age >= 12 && isMember) {
-  message("The ticket cose is $10");
+  message("The ticket cost is $10");
 } else {
   message("The ticket cost is $15");
 }
