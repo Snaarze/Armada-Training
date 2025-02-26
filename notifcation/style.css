@@ -10,10 +10,14 @@ body {
 }
 
 header,
-footer,
-ul {
+footer {
   padding: 20px;
   color: white;
+}
+
+header,
+footer,
+li > button {
   background-color: lightblue;
 }
 
@@ -33,29 +37,27 @@ section {
 }
 
 ul {
-  min-width: 200px;
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-  text-align: center;
+  min-width: 300px;
+  background-color: lightgrey;
 }
 
 li > button {
   border: none;
-  background-color: lightblue;
-  color: white;
 }
 
-footer {
+footer,
+ul {
   text-align: center;
 }
 
 .container > li {
   display: flex;
   list-style: none;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   padding: 10px;
   border: 1px solid white;
+  background-color: lightblue;
+  margin: 10px;
 }
