@@ -53,10 +53,11 @@ function startGame(player1, player2) {
   if (player1.hp === player2.hp) return message(`Draw!`);
 
   //   checks if player1 has higher hp
-  if (player1.hp > player2.hp) return message(` You won! ${player1.name} `);
+  if (player1.hp > player2.hp)
+    return message(`${player1.name} WINS the battle! `);
 
   //   if not player 2 has higher hp
-  message(`You won! ${player2.name}`);
+  message(`${player2.name} WINS the battle!`);
 }
 
 // logs the message for better readability
