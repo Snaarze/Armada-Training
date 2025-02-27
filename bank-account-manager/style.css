@@ -13,6 +13,14 @@ main {
   height: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
+.limit-reach {
+  color: red;
+}
+
 section {
   text-align: center;
 }
@@ -25,6 +33,19 @@ h1 {
 input {
   padding: 5px;
   width: 200px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+li {
+  text-align: start;
+  background-color: lightgray;
+  list-style: none;
+  padding: 5px;
 }
 
 .btn-container,

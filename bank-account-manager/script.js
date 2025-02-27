@@ -9,9 +9,14 @@ function User(name, initialValue) {
     // user can withdraw their money
     withdraw: function (e) {
       e.preventDefault();
+
       //  prevent user from withdrawing if value is empty
       if (!this.selectors().inputValue.value) {
         return alert("Please enter a number");
+      }
+
+      if (this.checkLimit()) {
+        return;
       }
 
       //   prevent user from withdrawing if user balance is below the value of withdrawing
@@ -20,7 +25,7 @@ function User(name, initialValue) {
       }
       this.initialValue = this.initialValue - this.selectors().inputValue.value;
       //   update the balance text
-      this.updateBalanceText("withdraw");
+      this.updateBalanceText("Withdraw");
       //   return the updated initialValue
       return this.initialValue;
     },
@@ -34,35 +39,60 @@ function User(name, initialValue) {
       this.initialValue =
         this.initialValue + +this.selectors().inputValue.value;
       // updates the balance text
-      this.updateBalanceText("deposit");
+      this.updateBalanceText("Deposit");
       //   return the updated initialValue
       return this.initialValue;
+    },
+    checkLimit: function () {
+      this.limitValue = this.limitValue - +this.selectors().inputValue.value;
+      if (
+        this.limitValue < 0 &&
+        +this.selectors().inputValue.value > this.limitValue
+      ) {
+        this.selectors().limitReach.classList.toggle("hidden");
+        setTimeout(() => {
+          this.selectors().limitReach.classList.toggle("hidden");
+        }, 3000);
+        return true;
+      }
+      return false;
     },
     // list of selectors
     selectors: function () {
       const currentBalanceText = document.querySelector(
         ".current-balance-text"
       );
-      const actionText = document.querySelector(".action-text");
       const depositBtn = document.querySelector(".deposit-btn");
       const withdrawBtn = document.querySelector(".withdraw-btn");
+      const ulContainer = document.querySelector("ul");
       let inputValue = document.querySelector("#input-value");
-
+      let transactionHistoryText = document.querySelector("history");
+      let limitReach = document.querySelector(".limit-reach");
       return {
         currentBalanceText,
-        actionText,
         depositBtn,
         withdrawBtn,
         inputValue,
+        transactionHistoryText,
+        limitReach,
+        ulContainer,
       };
     },
     // update the balance via screen
     updateBalanceText: function (action) {
-      this.selectors().currentBalanceText.textContent = `$${this.initialValue}`;
-      this.selectors().actionText.textContent = `Successfully ${action} $${
+      let actionText = document.createElement("li");
+      actionText.textContent = `${action} :  $${
         this.selectors().inputValue.value
       }.`;
+
+      this.selectors().ulContainer.appendChild(actionText);
+
+      this.selectors().currentBalanceText.textContent = `$${this.initialValue}`;
       this.selectors().inputValue.value = "";
+
+      setTimeout(() => {
+        this.selectors().ulContainer.removeChild(actionText);
+      }, 3000);
     },
     // initialize the listeners
     startInteraction: function () {
