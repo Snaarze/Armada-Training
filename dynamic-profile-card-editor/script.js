@@ -8,36 +8,35 @@ let profileInput = document.querySelector("#img-input");
 let changeColorInput = document.querySelector("#changeColor");
 let profileContainer = document.querySelector(".profile-info-container");
 // const selectors
-const updateNameBtn = document.querySelector(".update-name-btn");
-const updateBioBtn = document.querySelector(".update-bio-btn");
-const updateImageBtn = document.querySelector(".update-image-btn");
-const updateBgColor = document.querySelector(".change-bg-color");
+
+const updateProfileBtn = document.querySelector(".update-profile-btn");
 
 // change the name text
-const updateName = (e) => {
-  e.preventDefault();
+const updateName = () => {
   if (!nameInput.value) return alert("Please type a name first");
   return (nameText.textContent = nameInput.value);
 };
 // update the bio text
-const updateBio = (e) => {
-  e.preventDefault();
+const updateBio = () => {
   return (bioText.textContent = bioInput.value);
 };
 // update the image by changing the attribute
-const updateImage = (e) => {
-  e.preventDefault();
+const updateImage = () => {
   return profileImg.setAttribute("src", profileInput.value);
 };
 
 // update the background color of the profile container
-const updateBackgroundColor = (e) => {
-  e.preventDefault();
+const updateBackgroundColor = () => {
   return (profileContainer.style.backgroundColor = changeColorInput.value);
 };
 
+const master = (e) => {
+  e.preventDefault();
+  updateName();
+  updateBio();
+  updateImage();
+  updateBackgroundColor();
+};
+
 // attach event listener
-updateNameBtn.addEventListener("click", updateName);
-updateBioBtn.addEventListener("click", updateBio);
-updateImageBtn.addEventListener("click", updateImage);
-updateBgColor.addEventListener("click", updateBackgroundColor);
+updateProfileBtn.addEventListener("click", master);
