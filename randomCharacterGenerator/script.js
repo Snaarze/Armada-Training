@@ -2,7 +2,7 @@ function Character(name) {
   return {
     name,
     health: 100,
-    str: 20,
+    str: 15,
     // iife to add class randomly after the class is created
     class: (function () {
       let availableClass = ["Mage", "Archer", "Healer", "Assassins"];
