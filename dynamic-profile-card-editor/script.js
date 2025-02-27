@@ -30,7 +30,7 @@ const updateBackgroundColor = () => {
   return (profileContainer.style.backgroundColor = changeColorInput.value);
 };
 
-const master = (e) => {
+const updateProfile = (e) => {
   e.preventDefault();
   updateName();
   updateBio();
@@ -39,4 +39,4 @@ const master = (e) => {
 };
 
 // attach event listener
-updateProfileBtn.addEventListener("click", master);
+updateProfileBtn.addEventListener("click", updateProfile);
