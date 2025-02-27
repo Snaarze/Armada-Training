@@ -9,48 +9,39 @@ const addNewTask = (e) => {
   // push item to the array
   if (!taskInput.value) return alert(" Please input anything first!");
 
-  taskItems.push({ id, task: taskInput.value });
+  taskItems.push(taskInput.value);
+  renderData(taskInput.value);
   //   remove the valeu of the input
   taskInput.value = "";
   showNotification(e.target);
-  renderData();
+
   id++;
 };
 
-const renderData = () => {
-  while (container.firstChild) {
-    container.removeChild(container.firstChild);
-  }
-  taskItems.forEach((item) => {
-    // convert the id to index
-    // this function is created for less bugs
-    const convertIdToIndex = () =>
-      taskItems.findIndex((task) => task.id === item.id);
+const renderData = (taskInput) => {
+  // create new list, paragraph and a button
+  const list = document.createElement("li");
+  const taskName = document.createElement("p");
+  const removeBtn = document.createElement("button");
 
-    // create new list, paragraph and a button
-    const list = document.createElement("li");
-    const taskName = document.createElement("p");
-    const removeBtn = document.createElement("button");
+  // set values of elements
+  taskName.textContent = taskInput;
+  removeBtn.textContent = "Remove";
+  removeBtn.setAttribute("index", id);
 
-    // set values of elements
-    taskName.textContent = item.task;
-    removeBtn.textContent = "Remove";
-    removeBtn.setAttribute("index", convertIdToIndex());
+  // append children to parents
+  list.appendChild(taskName);
+  list.appendChild(removeBtn);
 
-    // append children to parents
-    list.appendChild(taskName);
-    list.appendChild(removeBtn);
-
-    // append list to container
-    container.appendChild(list);
-  });
+  // append list to container
+  container.appendChild(list);
 };
 
 const removeList = (e) => {
   if (e.target.tagName === "BUTTON") {
     showNotification(e.target);
     taskItems.splice(+e.target.getAttribute("index"), 1);
-    renderData();
+    container.removeChild(e.target.parentElement);
   }
 };
 
@@ -58,13 +49,13 @@ const showNotification = (e) => {
   // if add task has beeen click log the current task being added
   if (e.value === "Add Task") {
     return createNotification(
-      ` Task added : ${taskItems[taskItems.length - 1].task} `
+      ` Task added : ${taskItems[taskItems.length - 1]} `
     );
   }
 
   if (e.tagName === "BUTTON") {
     createNotification(
-      `Task deleted : ${taskItems[+e.getAttribute("index")].task} `
+      `Task deleted : ${taskItems[+e.getAttribute("index")]} `
     );
   }
 };
@@ -87,7 +78,7 @@ const toggleClass = (e) => {
   if (e.target.tagName === "P") {
     e.stopPropagation;
     e.target.nextSibling.classList.toggle("completed-btn");
-    return e.target.parentElement.classList.toggle("completed");
+    e.target.parentElement.classList.toggle("completed");
   }
 };
 
