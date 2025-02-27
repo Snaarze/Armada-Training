@@ -1,9 +1,12 @@
 // selectors
 const img = document.querySelectorAll("ul li div img ");
-let headArmorImg = document.querySelector(".head-armor");
-let chestPlateArmor = document.querySelector(".chestplate-armor");
-let leggingsArmor = document.querySelector(".leggings-armor");
-let bootsArmor = document.querySelector(".boots-armor");
+
+const armorPart = {
+  head: document.querySelector(".head-armor"),
+  chestplate: document.querySelector(".chestplate-armor"),
+  leggings: document.querySelector(".leggings-armor"),
+  boots: document.querySelector(".boots-armor"),
+};
 
 // iterate to all img
 img.forEach((armor) => {
@@ -12,22 +15,11 @@ img.forEach((armor) => {
 
 // change the armor accordingly
 function changeArmor() {
-  let setHead = this.getAttribute("src");
+  let setImg = this.getAttribute("src");
+  let dataPart = this.getAttribute("data-part");
 
-  //   change head armor
-  if (this.getAttribute("data-part") == "head") {
-    headArmorImg.src = setHead;
-  }
-  //   change chesplate armor
-  if (this.getAttribute("data-part") == "chestplate") {
-    chestPlateArmor.src = setHead;
-  }
-  //   change leggings armor
-  if (this.getAttribute("data-part") == "leggings") {
-    leggingsArmor.src = setHead;
-  }
-  //   change boots armor
-  if (this.getAttribute("data-part") == "boots") {
-    bootsArmor.src = setHead;
+  //   if any armor exist in the array change the armor
+  if (armorPart[dataPart]) {
+    armorPart[dataPart].setAttribute("src", setImg);
   }
 }
