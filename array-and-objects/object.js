@@ -6,7 +6,7 @@ const book = {
   title: "One piece",
   author: "Oda Ichiro",
   pages: 1995,
-  isRead: true,
+  isRead: false,
 };
 
 // before update of the book
@@ -21,6 +21,7 @@ message(book);
 // updated book
 book.genre = "Shonen";
 
+book.isRead = true;
 message("Updating the book....");
 message("Book has been updated");
 message("Updated book");
@@ -52,7 +53,7 @@ message("before :");
 message(movies);
 
 // adding one object to array with title property only
-movies.push({ title: "Splash" });
+movies.push({ title: "Splash", director: "None", year: 2013 });
 
 // update the year of first object
 movies[0].year = 2023;
@@ -96,6 +97,4 @@ message(
 recipe.ingredients.push({ name: "Corn", quantity: "1 half cup" });
 
 // iterate the whole object
-for (let key in recipe) {
-  message(recipe[key]);
-}
+message(recipe);

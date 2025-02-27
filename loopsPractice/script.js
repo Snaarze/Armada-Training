@@ -15,10 +15,9 @@ let n = 5;
 let sum = 0;
 for (let j = 1; j <= n; j++) {
   sum += j;
-  if (j === n) {
-    message(`The sum of the first 5 numbers is : ${sum}`);
-  }
 }
+
+message(`The sum of the first 5 numbers is : ${sum}`);
 
 // array elements printer
 const intArray = [2, 4, 6, 8, 10];
@@ -35,10 +34,8 @@ for (let i = 0; i < 5; i++) {
   for (let j = 0; j <= i; j++) {
     stars += "*";
     // can use if statement to only see the final output
-    if (j === i) {
-      message(stars);
-    }
   }
+  message(stars);
 }
 
 // reverse Array Element
