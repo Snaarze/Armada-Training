@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+button {
+  border-radius: 5px;
+}
+
+button:active {
+  border: 3px solid yellow;
+}
+
+#container {
+  width: 300px;
+  height: 200px;
+  background-color: lightgray;
+  margin: 50px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.color-box {
+  width: 100px;
+  height: 40px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.orange {
+  background-color: orange;
+}
