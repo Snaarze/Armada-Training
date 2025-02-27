@@ -31,6 +31,7 @@ const updateBackgroundColor = () => {
 };
 
 const updateProfile = (e) => {
+  // update all the information of the user
   e.preventDefault();
   updateName();
   updateBio();
