@@ -56,7 +56,7 @@ function generateRandomCharacter(name) {
   let availableNames = ["Thorin", "Elara", "Zane", "Ivy", "Dante"];
   //   create new object every time function is called
   //   if name is valid set the name otherwise set randomly
-  const newCharacter = new Character(
+  const newCharacter = Character(
     name
       ? name
       : availableNames[generateRandomNumber(availableNames.length - 1, 0)]
