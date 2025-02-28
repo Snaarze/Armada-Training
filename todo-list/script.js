@@ -3,61 +3,47 @@ const submitBtn = document.querySelector(".submit-btn");
 const container = document.querySelector(".task-container");
 const body = document.querySelector("body");
 let taskItems = [];
-let id = 0;
 
 const addNewTask = () => {
   // push item to the array
   if (!taskInput.value) return alert(" Please input anything first!");
-
-  taskItems.push({ id: id, taskName: taskInput.value, isCompleted: false });
-  renderData();
+  // add items in array
+  taskItems.push(taskInput.value);
+  // create new list elements
+  createList(taskInput.value);
   createNotification(`Task added : ${taskInput.value}`);
-  id++;
-  //   remove the valeu of the input
+  //   reset the value of taskInput
   taskInput.value = "";
 };
 
-const renderData = () => {
+const createList = (task) => {
   // create new list, paragraph and a button
-  while (container.firstChild) {
-    container.removeChild(container.firstChild);
-  }
+  const list = document.createElement("li");
+  const taskName = document.createElement("p");
+  const removeBtn = document.createElement("button");
 
-  taskItems.forEach((item) => {
-    const list = document.createElement("li");
-    const taskName = document.createElement("p");
-    const removeBtn = document.createElement("button");
-    let convertIdToIndex = taskItems.findIndex((task) => task.id === item.id);
-    // set values of elements
+  taskName.textContent = task;
+  removeBtn.textContent = "Remove";
 
-    // if item is valid retain the dark color
-    if (item.isCompleted) {
-      list.classList.add("completed");
-      removeBtn.classList.add("completed-btn");
-    }
-    taskName.textContent = item.taskName;
-    removeBtn.textContent = "Remove";
-    removeBtn.setAttribute("index", convertIdToIndex);
+  // append children to parents
+  list.appendChild(taskName);
+  list.appendChild(removeBtn);
 
-    // append children to parents
-    list.appendChild(taskName);
-    list.appendChild(removeBtn);
-
-    // append list to container
-    container.appendChild(list);
-  });
+  // append list to container
+  container.appendChild(list);
 };
 
 const removeList = (e) => {
   if (e.target.tagName === "BUTTON") {
-    let index = +e.target.getAttribute("index");
-    console.log(index);
-    createNotification(`Task deleted : ${taskItems[index].taskName}`);
-
+    // get the index of the element target
+    let index = Array.from(
+      e.target.parentElement.parentElement.children
+    ).indexOf(e.target.parentElement);
+    createNotification(`Task deleted : ${taskItems[index]}`);
+    // remove a task
     taskItems.splice(index, 1);
+    // remove child from the parent
     container.removeChild(e.target.parentElement);
-    console.log(taskItems);
-    renderData();
   }
 };
 
@@ -77,12 +63,6 @@ const createNotification = (message) => {
 
 const toggleClass = (e) => {
   if (e.target.tagName === "P") {
-    e.stopPropagation;
-    taskItems[+e.target.nextSibling.getAttribute("index")].isCompleted =
-      !taskItems[+e.target.nextSibling.getAttribute("index")].isCompleted;
-    console.log(
-      taskItems[+e.target.nextSibling.getAttribute("index")].isCompleted
-    );
     e.target.nextSibling.classList.toggle("completed-btn");
     e.target.parentElement.classList.toggle("completed");
   }
