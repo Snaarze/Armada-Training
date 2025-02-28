@@ -44,9 +44,8 @@ function User(name, initialValue) {
       return this.initialValue;
     },
     checkLimit: function () {
-      this.limitValue = this.limitValue - +this.selectors().inputValue.value;
       if (
-        this.limitValue < 0 &&
+        this.limitValue < 0 ||
         +this.selectors().inputValue.value > this.limitValue
       ) {
         this.selectors().limitReach.classList.toggle("hidden");
@@ -55,6 +54,7 @@ function User(name, initialValue) {
         }, 3000);
         return true;
       }
+      this.limitValue = this.limitValue - +this.selectors().inputValue.value;
       return false;
     },
     // list of selectors
