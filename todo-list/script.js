@@ -1,19 +1,22 @@
 const taskInput = document.querySelector("#task-input");
-const submitBtn = document.querySelector(".submit-btn");
+const form = document.querySelector("form");
 const container = document.querySelector(".task-container");
 const body = document.querySelector("body");
 let taskItems = [];
 
-const addNewTask = () => {
-  // push item to the array
-  if (!taskInput.value) return alert(" Please input anything first!");
-  // add items in array
-  taskItems.push(taskInput.value);
-  // create new list elements
-  createList(taskInput.value);
-  createNotification(`Task added : ${taskInput.value}`);
-  //   reset the value of taskInput
-  taskInput.value = "";
+const addNewTask = (e) => {
+  if (e.key === "Enter" || e.target.value === "Add Task") {
+    e.preventDefault();
+    // push item to the array
+    if (!taskInput.value) return alert(" Please input anything first!");
+    // add items in array
+    taskItems.push(taskInput.value);
+    // create new list elements
+    createList(taskInput.value);
+    createNotification(`Task added : ${taskInput.value}`);
+    //   reset the value of taskInput
+    taskInput.value = "";
+  }
 };
 
 const createList = (task) => {
@@ -22,6 +25,7 @@ const createList = (task) => {
   const taskName = document.createElement("p");
   const removeBtn = document.createElement("button");
 
+  // assign values to it
   taskName.textContent = task;
   removeBtn.textContent = "Remove";
 
@@ -68,6 +72,7 @@ const toggleClass = (e) => {
   }
 };
 
-submitBtn.addEventListener("click", addNewTask);
+form.addEventListener("click", addNewTask);
+form.addEventListener("keydown", addNewTask);
 container.addEventListener("click", removeList);
 container.addEventListener("click", toggleClass);
