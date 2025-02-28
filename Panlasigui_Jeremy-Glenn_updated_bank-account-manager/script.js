@@ -114,7 +114,7 @@ function User(name, initialValue) {
 }
 
 // create a object name "Jeremy"
-const user1 = new User("Jeremy", 5000);
+const user1 = User("Jeremy", 5000);
 
 // initialize the all the listeners
 user1.startInteraction();
