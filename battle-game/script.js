@@ -4,15 +4,12 @@
 // factory functions
 // this acts as the creating of objects inside the function!
 function Player(name, str) {
-  this.name = name;
-  this.strength = str;
-
   return {
     name,
     hp: 100,
     str,
     attack: function (player) {
-      let damage = Math.floor(Math.random() * str) + 1;
+      let damage = Math.floor(Math.random() * str);
       //   logs the damage done by the player to another player
       message(`${this.name} Attack ${player.name} and does  ${damage} damage!`);
       //   logs their current health of the two players
@@ -24,6 +21,9 @@ function Player(name, str) {
     },
     // remove hp with the damage received
     deductHp: function (dmg) {
+      if (this.hp < dmg) {
+        return (this.hp = 0);
+      }
       this.hp = this.hp - dmg;
       return this.hp;
     },
@@ -32,8 +32,8 @@ function Player(name, str) {
 
 function startGame(player1, player2) {
   // create two objects
-  player1 = Player("Jeremy", 100, 15);
-  player2 = Player("Alcen", 100, 15);
+  player1 = Player("Jeremy", 15);
+  player2 = Player("Alcen", 15);
 
   //   round variable
   let roundCounter = 0;
@@ -44,21 +44,23 @@ function startGame(player1, player2) {
 
     // both players attack
     player1.attack(player2);
+    // check if player 2 is still vaid
+    if (player2.hp < 1 || (player1.hp > player2.hp && roundCounter === 9)) {
+      message(`${player1.name} WINS the battle! `);
+      break;
+    }
     player2.attack(player1);
-
+    // check if player 1 is still vaid
+    if (player1.hp < 1 || (player2.hp > player1.hp && roundCounter === 9)) {
+      message(`${player2.name} WINS the battle!`);
+      break;
+    }
     //  change round by 1
     roundCounter++;
   }
 
   //   return draw if both player has the same hp!
   if (player1.hp === player2.hp) return message(`Draw!`);
-
-  //   checks if player1 has higher hp
-  if (player1.hp > player2.hp)
-    return message(`${player1.name} WINS the battle! `);
-
-  //   if not player 2 has higher hp
-  message(`${player2.name} WINS the battle!`);
 }
 
 // logs the message for better readability
