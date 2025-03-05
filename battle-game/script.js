@@ -1,39 +1,38 @@
-// Hi mentors! i hope you understand that this version was done differently than the instruction should be. i am currently practicing the objects/classes for better
-// readability, thank you for understanding! i hope this would not be flagged as ai generated.
-
 // factory functions
 // this acts as the creating of objects inside the function!
-function Player(name, str) {
-  this.name = name;
-  this.strength = str;
+function Player(name, hp, str) {
+  let attack = (player) => {
+    let damage = Math.floor(Math.random() * str) + 1;
+    //   logs the damage done by the player to another player
+    message(`${name} Attack ${player.name} and does  ${damage} damage!`);
+    //   logs their current health of the two players
+    message(
+      `${name} HP ${hp} | ${player.name} HP ${player.updateHp(damage)} \n`
+    );
+  };
+
+  // update the player hp every attack
+  let updateHp = (dmg) => {
+    hp -= dmg;
+    return hp;
+  };
 
   return {
     name,
-    hp: 100,
+    hp,
     str,
-    attack: function (player) {
-      let damage = Math.floor(Math.random() * str) + 1;
-      //   logs the damage done by the player to another player
-      message(`${this.name} Attack ${player.name} and does  ${damage} damage!`);
-      //   logs their current health of the two players
-      message(
-        `${this.name} HP ${this.hp} | ${player.name} HP ${player.deductHp(
-          damage
-        )} \n`
-      );
-    },
-    // remove hp with the damage received
-    deductHp: function (dmg) {
-      this.hp = this.hp - dmg;
-      return this.hp;
-    },
+    attack,
+    updateHp,
   };
 }
 
 function startGame(player1, player2) {
   // create two objects
-  player1 = new Player("Jeremy", 10);
-  player2 = new Player("Alcen", 10);
+  player1 = Player("Jeremy", 100, 15);
+  player2 = Player("Alcen", 100, 15);
+  console.log(player1);
+  player1.attack(player2);
+
   //   round variable
   let roundCounter = 0;
 
