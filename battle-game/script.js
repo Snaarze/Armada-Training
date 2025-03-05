@@ -30,8 +30,6 @@ function startGame(player1, player2) {
   // create two objects
   player1 = Player("Jeremy", 100, 15);
   player2 = Player("Alcen", 100, 15);
-  console.log(player1);
-  player1.attack(player2);
 
   //   round variable
   let roundCounter = 0;
