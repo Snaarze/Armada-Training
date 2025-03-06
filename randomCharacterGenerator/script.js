@@ -2,7 +2,7 @@ function Character(name) {
   return {
     name,
     health: 100,
-    str: 15,
+    str: 20,
     // iife to add class randomly after the class is created
     class: (function () {
       let availableClass = ["Mage", "Archer", "Healer", "Assassins"];
@@ -29,7 +29,7 @@ function Character(name) {
     })(),
     battle: function (player) {
       // generate random number start from 5 to 20
-      let damage = generateRandomNumber(this.str, 5);
+      let damage = generateRandomNumber(this.str - 5, 5);
       //   logs the attacker name and damage dealt
       return console.log(
         `Character ${this.name} Attacked Character ${player.name} with ${
@@ -41,7 +41,7 @@ function Character(name) {
     },
     // reduce the player hp
     receivedDamage: function (dmg) {
-      return (this.health = this.health - dmg);
+      return (this.health -= dmg);
     },
   };
 }
@@ -66,6 +66,7 @@ function generateRandomCharacter(name) {
   // return the newly created character
   return newCharacter;
 }
+
 // random name
 const randomCharacter = generateRandomCharacter();
 
