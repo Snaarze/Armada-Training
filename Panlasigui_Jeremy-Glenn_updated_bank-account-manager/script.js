@@ -1,4 +1,3 @@
-// Hello mentors i hope you understand by using this, i want to upskill my oop/class i hope i am allowed using this
 // create objects that can withdraw and deposit
 function User(name, initialValue) {
   return {
@@ -6,6 +5,7 @@ function User(name, initialValue) {
     name,
     initialValue,
     limitValue: 500,
+    timeoutID: "",
     // user can withdraw their money
     withdraw: function (e) {
       e.preventDefault();
@@ -14,15 +14,15 @@ function User(name, initialValue) {
       if (!this.selectors().inputValue.value) {
         return alert("Please enter a number");
       }
+      //   prevent user from withdrawing if user balance is below the value of withdrawing
+      if (this.initialValue < +this.selectors().inputValue.value) {
+        return alert("Inefficient Balance");
+      }
 
       if (this.checkLimit()) {
         return;
       }
 
-      //   prevent user from withdrawing if user balance is below the value of withdrawing
-      if (this.initialValue < +this.selectors().inputValue.value) {
-        return alert("Inefficient Balance");
-      }
       this.initialValue = this.initialValue - this.selectors().inputValue.value;
       //   update the balance text
       this.updateBalanceText("Withdraw");
@@ -48,13 +48,17 @@ function User(name, initialValue) {
         this.limitValue < 0 ||
         +this.selectors().inputValue.value > this.limitValue
       ) {
-        this.selectors().limitReach.classList.toggle("hidden");
-        setTimeout(() => {
+        // clears the timeout if there is existing timeout
+        clearTimeout(this.timeoutID);
+        // remove the hidden class if exist
+        this.selectors().limitReach.classList.remove("hidden");
+        // set the timeout
+        this.timeoutID = setTimeout(() => {
           this.selectors().limitReach.classList.toggle("hidden");
         }, 3000);
         return true;
       }
-      this.limitValue = this.limitValue - +this.selectors().inputValue.value;
+      this.limitValue -= this.selectors().inputValue.value;
       return false;
     },
     // list of selectors
@@ -86,13 +90,8 @@ function User(name, initialValue) {
       }.`;
 
       this.selectors().ulContainer.appendChild(actionText);
-
       this.selectors().currentBalanceText.textContent = `$${this.initialValue}`;
       this.selectors().inputValue.value = "";
-
-      setTimeout(() => {
-        this.selectors().ulContainer.removeChild(actionText);
-      }, 3000);
     },
     // initialize the listeners
     startInteraction: function () {
@@ -114,7 +113,7 @@ function User(name, initialValue) {
 }
 
 // create a object name "Jeremy"
-const user1 = User("Jeremy", 5000);
+const user1 = User("Jeremy", 200);
 
 // initialize the all the listeners
 user1.startInteraction();
