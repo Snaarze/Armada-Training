@@ -11,7 +11,10 @@ function User(name, initialValue) {
       e.preventDefault();
 
       //  prevent user from withdrawing if value is empty
-      if (!this.selectors().inputValue.value) {
+      if (
+        !this.selectors().inputValue.value ||
+        Number(this.selectors().inputValue.value < 1)
+      ) {
         return alert("Please enter a number");
       }
       //   prevent user from withdrawing if user balance is below the value of withdrawing
@@ -33,7 +36,10 @@ function User(name, initialValue) {
     deposit: function (e) {
       e.preventDefault();
       //  prevent user to deposit if value is empty
-      if (!this.selectors().inputValue.value) {
+      if (
+        !this.selectors().inputValue.value ||
+        Number(this.selectors().inputValue.value < 1)
+      ) {
         return alert("Please enter a number");
       }
       this.initialValue =
